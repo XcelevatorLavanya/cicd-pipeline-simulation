@@ -1,1 +1,15 @@
-
+name : Use Variables
+on:[workflow_dispatch]
+ 
+env:
+APP_NAME: my-spring-app
+ 
+jobs:
+  build:
+    runs-on : Ubuntu latest
+    steps:
+      name: Print variables
+      run:
+        echo "Testing passing variable in pipeline"
+        echo "App name: $APP_NAME"
+        echo "Environment : ${{ vars.ENV_NAME}}"
